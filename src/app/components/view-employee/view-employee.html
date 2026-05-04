@@ -1,0 +1,27 @@
+@if (employee){
+<div class="d-flex" style="height:100vh; justify-content:center; align-items:center;">
+
+  <form style="width:400px; padding:20px; border:1px solid #ccc; border-radius:10px;">
+    <h3 class="text-center">Employee Details</h3>
+    <label>Employee ID:</label><br>
+    <input type="text" [value]="employee.id" readonly><br><br>
+    <label>Employee Name:</label><br>
+    <input type="text" [value]="employee.empName" readonly><br><br>
+
+    <label>Salary:</label><br>
+    <input type="number" [value]="employee.salary" readonly><br><br>
+
+    <label>Department Name:</label><br>
+    <input type="text" [value]="employee.deptName" readonly><br><br>
+
+    <label>Role:</label><br>
+    <input type="text" [value]="employee.role" readonly><br><br>
+    <button type="button" class="btn btn-danger btn-sm" (click)="BacktoPage()">
+      Cancel
+    </button>
+  </form>
+</div>
+}
+@else {
+<h3 class="text-center mt-5">Loading...</h3>
+}

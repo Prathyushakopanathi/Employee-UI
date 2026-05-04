@@ -1,0 +1,42 @@
+<div style="display:flex; flex-direction:column;min-height:100vh">
+    <div style="flex: 1; padding: 20px;">
+        <h2 style="color: blue;">{{ role }} Employee Details</h2>
+        <div class="d-flex justify-content-end mb-3">
+            <button type="button" class="btn btn-primary btn-md me-2" style="text-align: right;"
+                (click)="addEmployee()"> Add Employee</button>
+            <button class="btn btn-danger btn-bottom" (click)="logout()">
+                Logout
+            </button>
+        </div>
+        <div>
+            <table class="table table-bordered table-hover text-center" style="width:100%; table-layout: fixed;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Department</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(emp of employees; track emp.id){
+                    <tr>
+
+                        <td>{{emp.empName}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.deptName}}</td>
+                        <td>{{emp.role}}</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm me-2" (click)="getEmployees(emp.id)">View</button>
+                            <button class="btn btn-success btn-sm me-2" (click)="editEmployee(emp.id)">Edit</button>
+                            <button class="btn btn-danger btn-sm me-2" (click)="deleteEmployee(emp.id)">Delete</button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

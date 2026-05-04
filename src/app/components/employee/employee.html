@@ -1,0 +1,29 @@
+<div style=" min-height: 100vh; display: flex; flex-direction: column;">
+    <div style=" flex: 1; padding: 20px;">
+        <h2>Employee Details</h2>
+        <table class="table table-bordered text-center" style="width:100%; table-layout: fixed;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Department</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(emp of employee; track emp.id){
+                <tr>
+                    <td>{{emp.empName}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.deptName}}</td>
+                    <td>{{emp.role}}</td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <footer style="text-align: center; padding: 20px;">
+        <button class="btn btn-danger btn-bottom" (click)="logout()">Logout</button>
+    </footer>
+</div>

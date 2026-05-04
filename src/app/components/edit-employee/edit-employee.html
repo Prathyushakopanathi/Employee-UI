@@ -1,0 +1,26 @@
+@if(employee){
+<div class="d-flex justify-content-center align-items-center" style="height:100vh">
+    <form style="width:400px; padding:20px; border:1px solid #ccc; border-radius:10px;">
+        <h3 class="text-center">Edit Employee</h3>
+
+        <label>Name:</label><br>
+        <input type="text" class="form-control" [(ngModel)]="employee.empName" name="empName"><br>
+
+        <label>Salary:</label><br>
+        <input type="number" class="form-control" [(ngModel)]="employee.salary" name="salary"><br>
+
+        <label>Department:</label><br>
+        <input type="text" class="form-control" [(ngModel)]="employee.deptName" name="deptName"><br>
+
+        <label>Role:</label><br>
+        <input type="text" class="form-control" [(ngModel)]="employee.role" name="role"><br>
+
+        <button type="button" class="btn btn-success me-2" (click)="updateEmployee()">
+            Save
+        </button>
+        <button type="button" class="btn btn-danger me-2" (click)="BacktoPage()">
+            Cancel
+        </button>
+    </form>
+</div>
+}

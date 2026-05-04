@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center align-items-center" style="height:100vh;">
+
+    <form style="width:400px; padding:20px; border:1px solid #ccc; border-radius:10px;">
+
+        <h3 class="text-center mb-4">Add Employee</h3>
+
+        <label>Employee ID:</label>
+        <input type="number" class="form-control mb-3" [(ngModel)]="employee.id" name="id">
+
+        <label>Employee Name</label>
+        <input type="text" class="form-control mb-3" [(ngModel)]="employee.empName" name="empName">
+
+        <label>Employee Salary</label>
+        <input type="number" class="form-control mb-3" [(ngModel)]="employee.salary" name="salary">
+
+        <label>Employee Department</label>
+        <input type="text" class="form-control mb-3" [(ngModel)]="employee.deptName" name="deptName">
+
+        <label>Employee Role</label>
+        <input type="text" class="form-control mb-3" [(ngModel)]="employee.role" name="role">
+        <label>Creator Role</label>
+        <select class="form-control mb-3" [(ngModel)]="employee.createdId" name="createdId">
+            <option [ngValue]="null">-- Select Role --</option>
+            <option [ngValue]="1">Admin</option>
+            <option [ngValue]="2">HR</option>
+        </select>
+        <label>Employee Password :</label>
+        <input type="password" class="form-control mb-3" [(ngModel)]="employee.password" name="password">
+
+        <button type="button" class="btn btn-success me-2" (click)="saveEmployee()">
+            Save
+        </button>
+
+        <button type="button" class="btn btn-secondary" (click)="cancel()">
+            Cancel
+        </button>
+
+    </form>
+</div>
